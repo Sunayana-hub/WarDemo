@@ -42,14 +42,7 @@
     <finalName>JenkinsWar</finalName>
      <plugins>
        
-       <plugin>            
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-war-plugin</artifactId>
-  <configuration>
-    <webXml>src\main\java\webapp\WEB-INF\web.xml</webXml>        
-  </configuration>
-</plugin>
-       
+     
      <plugin>  
  <groupId>org.apache.tomcat.maven</groupId>  
  <artifactId>tomcat8-maven-plugin</artifactId>  
