@@ -41,20 +41,19 @@
    <build>
     <finalName>JenkinsWar</finalName>
      <plugins>
-       
+        <plugin>            
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-war-plugin</artifactId>
+  <configuration>
+    <webXml>src\main\java\webapp\WEB-INF\web.xml</webXml>        
+  </configuration>
+</plugin>
      
      <plugin>  
  <groupId>org.apache.tomcat.maven</groupId>  
  <artifactId>tomcat8-maven-plugin</artifactId>  
  <version>2.2</version>  
- <configuration>  
-  <url>http://13.232.248.154:8081</url>  
-    <server>
-      <id>releases</id>
-      <username>admin</username>
-      <password>admin123</password>
-    </server>
- </configuration>   
+ 
 </plugin>
        
        </plugins>
