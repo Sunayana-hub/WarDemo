@@ -1,5 +1,5 @@
 pipeline {
-        agent any
+        agent any {
         stages {
                 stage('checkout') {
                         steps {
@@ -7,7 +7,7 @@ pipeline {
                                 }
                         }
                 stage('build') {
-                            steps {
+                            step {
                                    echo  'Clean Build'
                                    sh 'mvn clean compile' }
                         }
@@ -18,18 +18,19 @@ pipeline {
                                         }
                                 }
                 stage('package') {
-                                   steps {
+                                   step {
                                           echo 'Package'
                                           sh 'mvn package'
                                         }
                                 }
                 stage('deploy') {
-                                   steps {
+                                   step {
                                           echo 'Deploy'
                                           sh 'mvn deploy'
-                                        }
+                                          }
                                 }
                 }
+        }
 post {
         always {
             echo 'JENKINS PIPELINE'
