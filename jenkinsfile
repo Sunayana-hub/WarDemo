@@ -1,0 +1,50 @@
+pipeline {
+        agent any
+        stages {
+                stage('checkout') {
+                        steps {
+                                echo 'checkout'
+                                }
+                        }
+                stage('build') {
+                            steps {
+                                   echo  'Clean Build'
+                                   sh 'mvn clean compile' }
+                        }
+                stage('test') {
+                                steps {
+                                        echo 'Test'
+                                        sh 'mvn test'
+                                        }
+                                }
+                stage('package') {
+                                   steps {
+                                          echo 'Package'
+                                          sh 'mvn package'
+                                        }
+                                }
+                stage('deploy') {
+                                   steps {
+                                          echo 'Deploy'
+                                          sh 'mvn deploy'
+                                        }
+                                }
+                }
+post {
+        always {
+            echo 'JENKINS PIPELINE'
+        }
+        success {
+            echo 'JENKINS PIPELINE SUCCESSFUL'
+        }
+        failure {
+            echo 'JENKINS PIPELINE FAILED'
+        }
+        unstable {
+            echo 'JENKINS PIPELINE WAS MARKED AS UNSTABLE'
+        }
+        changed {
+            echo 'JENKINS PIPELINE STATUS HAS CHANGED SINCE LAST EXECUTION'
+        }
+    }
+}
