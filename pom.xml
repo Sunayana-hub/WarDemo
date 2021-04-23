@@ -40,6 +40,11 @@
   </dependencies>  
    <build>
     <finalName>JenkinsWar</finalName>
+     <server>
+  <id>maven-tomcat-war-deployment-server></id>
+  <username>tomcat</username>
+  <password>tomcat</password>
+</server>
      <plugins>
      <plugin>  
  <groupId>org.apache.tomcat.maven</groupId>  
