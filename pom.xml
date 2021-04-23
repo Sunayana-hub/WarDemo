@@ -45,12 +45,12 @@
  <groupId>org.apache.tomcat.maven</groupId>  
  <artifactId>tomcat8-maven-plugin</artifactId>  
  <version>2.2</version>  
- <configuration>  
-  <url>http://13.232.161.23:8080/</url>  
-   <server>releases</server>
-    <username>admin</username>
-      <password>admin123</password>
-   </configuration>   
+<configuration>
+            <url>http://13.232.161.23:8080/JenkinsWar/</url>
+            <server>TomcatServer</server>
+            <path>/JenkinsWar</path>
+        </configuration>
+
 </plugin>   
        </plugins>
       </build>
