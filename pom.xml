@@ -40,11 +40,6 @@
   </dependencies>  
    <build>
     <finalName>JenkinsWar</finalName>
-     <server>
-  <id>maven-tomcat-war-deployment-server></id>
-  <username>tomcat</username>
-  <password>tomcat</password>
-</server>
      <plugins>
      <plugin>  
  <groupId>org.apache.tomcat.maven</groupId>  
@@ -52,12 +47,10 @@
  <version>2.2</version>  
  <configuration>  
   <url>http://13.232.161.23:8081/</url>  
-    <server>
-      <id>releases</id>
-      <username>admin</username>
+   <server>releases</server>
+    <username>admin</username>
       <password>admin123</password>
-    </server>
- </configuration>   
+   </configuration>   
 </plugin>   
        </plugins>
       </build>
